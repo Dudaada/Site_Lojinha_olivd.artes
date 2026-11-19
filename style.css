@@ -1,0 +1,308 @@
+/* ========================================================
+   Olivd.arts - RÉPLICA FIEL DA REFERÊNCIA
+   ======================================================== */
+
+@font-face {
+    font-family: 'Kerithing';
+    src: url('assets/Kerithing update.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fundo oficial enviado em assets/Fundo.png */
+    background-color: #24141d;
+    background-image: url('assets/Fundo.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+    padding: 40px 15px 50px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+/* --------------------------------------------------------
+   FOLHA ÚNICA DE CADERNO QUADRICULADO CENTRAL
+-------------------------------------------------------- */
+.folha-caderno {
+    position: relative;
+    width: 100%;
+    max-width: 536px;
+
+    /* Papel quadriculado idêntico à referência (linhas a cada 14px) */
+    background-color: #fcf8ec;
+    background-image:
+        linear-gradient(#ded7c7 1.2px, transparent 1.2px),
+        linear-gradient(90deg, #ded7c7 1.2px, transparent 1.2px);
+    background-size: 14px 14px;
+    background-position: center top;
+
+    border-radius: 24px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.7),
+        0 4px 15px rgba(0, 0, 0, 0.35);
+
+    padding: 42px 28px 36px 28px;
+}
+
+/* --------------------------------------------------------
+   ADESIVOS REAIS FLUTUANTES (STICKERS)
+-------------------------------------------------------- */
+.sticker {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(2px 5px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Libélula do topo esquerdo (sobrepondo a borda) */
+.sticker-topo-esquerda {
+    top: 15px;
+    left: -42px;
+    width: 145px;
+    transform: rotate(-35deg);
+}
+
+/* Estrela de cerâmica azul no topo direito */
+.sticker-topo-direita {
+    top: -28px;
+    right: -28px;
+    width: 125px;
+    transform: rotate(10deg);
+}
+
+/* Libélula do meio direito */
+.sticker-meio-direita {
+    top: 410px;
+    right: -38px;
+    width: 110px;
+    transform: rotate(25deg);
+}
+
+/* Libélula do canto inferior esquerdo */
+.sticker-baixo-esquerda {
+    bottom: 120px;
+    left: -36px;
+    width: 95px;
+    transform: rotate(-30deg);
+}
+
+/* --------------------------------------------------------
+   1. CABEÇALHO / LOGO
+-------------------------------------------------------- */
+.topo-loja {
+    text-align: center;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 5;
+}
+
+.logo-bloco {
+    display: inline-block;
+    text-align: center;
+}
+
+.logo-titulo {
+    font-family: 'Kerithing', 'Playfair Display', Georgia, serif;
+    font-size: 3.4rem;
+    font-weight: normal;
+    color: #1c1815;
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+/* Posicionado à direita, logo abaixo da terminação da palavra "arts" */
+.logo-subtitulo {
+    font-family: 'Caveat', 'Dancing Script', cursive;
+    font-size: 1.45rem;
+    color: #4e1923;
+    /* Tom vinho/bordô */
+    font-weight: 700;
+    text-align: right;
+    margin-top: -2px;
+    padding-right: 8px;
+    line-height: 1;
+}
+
+/* --------------------------------------------------------
+   2. SEJA BEM–VINDO <3
+-------------------------------------------------------- */
+.boas-vindas {
+    text-align: center;
+    margin: 26px 0 30px 0;
+    position: relative;
+    z-index: 5;
+}
+
+.boas-vindas h2 {
+    font-family: 'Kerithing', 'Caveat', 'Dancing Script', cursive;
+    font-size: 2.1rem;
+    font-weight: normal;
+    color: #4e1923;
+}
+
+/* --------------------------------------------------------
+   3. VITRINE DE PRODUTOS (2x2)
+-------------------------------------------------------- */
+.vitrine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 36px;
+    max-width: 360px;
+    margin: 0 auto 36px auto;
+    position: relative;
+    z-index: 5;
+}
+
+.produto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Quadrado azul pastel periwinkle idêntico à referência */
+.card-foto {
+    width: 100%;
+    aspect-ratio: 1 / 0.96;
+    background-color: #c8d1da;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.produto-nome {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1c1815;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.25;
+}
+
+/* --------------------------------------------------------
+   4. CARD "OI, EU SOU A DUDA"
+-------------------------------------------------------- */
+.card-sobre {
+    background-color: #fcf9f1;
+    border: 1.2px solid #ddd3c3;
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.sobre-foto {
+    width: 95px;
+    height: 105px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.sobre-texto h3 {
+    font-family: 'Kerithing', 'Playfair Display', Georgia, serif;
+    font-weight: normal;
+    font-size: 1.35rem;
+    color: #1c1815;
+    margin-bottom: 5px;
+}
+
+.sobre-texto p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.74rem;
+    line-height: 1.35;
+    color: #1c1815;
+    margin-bottom: 6px;
+}
+
+.agradecimento {
+    margin-bottom: 0 !important;
+}
+
+/* --------------------------------------------------------
+   RESPONSIVIDADE (MOBILE)
+-------------------------------------------------------- */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 8px 30px 8px;
+    }
+
+    .folha-caderno {
+        padding: 30px 16px 26px 16px;
+    }
+
+    .logo-titulo {
+        font-size: 2.7rem;
+    }
+
+    .logo-subtitulo {
+        font-size: 1.25rem;
+    }
+
+    .vitrine-grid {
+        max-width: 310px;
+        gap: 20px 24px;
+        margin-bottom: 28px;
+    }
+
+    .produto-nome {
+        font-size: 0.8rem;
+    }
+
+    .card-sobre {
+        padding: 14px 14px;
+        gap: 12px;
+    }
+
+    .sobre-foto {
+        width: 80px;
+        height: 90px;
+    }
+
+    .sobre-texto h3 {
+        font-size: 1.05rem;
+    }
+
+    .sobre-texto p {
+        font-size: 0.7rem;
+    }
+
+    .sticker-topo-esquerda {
+        width: 110px;
+        left: -25px;
+        top: 10px;
+    }
+
+    .sticker-topo-direita {
+        width: 95px;
+        right: -18px;
+        top: -18px;
+    }
+
+    .sticker-meio-direita {
+        width: 85px;
+        right: -22px;
+        top: 380px;
+    }
+
+    .sticker-baixo-esquerda {
+        width: 75px;
+        left: -22px;
+    }
+}
