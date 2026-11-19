@@ -15,6 +15,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     /* Fundo oficial enviado em assets/Fundo.png */
     background-color: #24141d;
@@ -23,13 +29,12 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
+
     min-height: 100vh;
     padding: 40px 15px 50px 15px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    overflow-x: hidden;
 }
 
 /* --------------------------------------------------------
@@ -39,20 +44,20 @@ body {
     position: relative;
     width: 100%;
     max-width: 536px;
-    
+
     /* Papel quadriculado idêntico à referência (linhas a cada 14px) */
     background-color: #fcf8ec;
-    background-image: 
+    background-image:
         linear-gradient(#ded7c7 1.2px, transparent 1.2px),
         linear-gradient(90deg, #ded7c7 1.2px, transparent 1.2px);
     background-size: 14px 14px;
     background-position: center top;
-    
+
     border-radius: 24px;
-    box-shadow: 
+    box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.7),
         0 4px 15px rgba(0, 0, 0, 0.35);
-    
+
     padding: 42px 28px 36px 28px;
 }
 
@@ -66,36 +71,38 @@ body {
     filter: drop-shadow(2px 5px 6px rgba(0, 0, 0, 0.3));
 }
 
-/* Libélula do topo esquerdo (sobrepondo a borda) */
+/* Libélula do topo esquerdo (maior e virada para dentro) */
 .sticker-topo-esquerda {
-    top: 15px;
-    left: -42px;
-    width: 145px;
-    transform: rotate(-35deg);
+    top: 10px;
+    left: -55px;
+    width: 220px;
+    /* Bem maior que as debaixo */
+    transform: rotate(-10deg);
 }
 
-/* Estrela de cerâmica azul no topo direito */
+/* Estrela de cerâmica azul no topo direito (aumentada conforme a referência) */
 .sticker-topo-direita {
-    top: -28px;
-    right: -28px;
-    width: 125px;
-    transform: rotate(10deg);
+    top: -38px;
+    right: -35px;
+    width: 170px;
+    /* Tamanho proporcional à referência */
+    transform: rotate(12deg);
 }
 
-/* Libélula do meio direito */
+/* Libélula do meio direito (virada para dentro) */
 .sticker-meio-direita {
     top: 410px;
-    right: -38px;
-    width: 110px;
-    transform: rotate(25deg);
+    right: -32px;
+    width: 125px;
+    transform: scaleX(-1) rotate(-15deg);
 }
 
-/* Libélula do canto inferior esquerdo */
+/* Libélula do canto inferior esquerdo (virada para dentro) */
 .sticker-baixo-esquerda {
     bottom: 120px;
-    left: -36px;
-    width: 95px;
-    transform: rotate(-30deg);
+    left: -32px;
+    width: 115px;
+    transform: rotate(10deg);
 }
 
 /* --------------------------------------------------------
@@ -115,22 +122,23 @@ body {
 
 .logo-titulo {
     font-family: 'Kerithing', 'Playfair Display', Georgia, serif;
-    font-size: 4.3rem; /* Um pouco maior como solicitado */
+    font-size: 4.3rem;
+    /* Um pouco maior como solicitado */
     font-weight: normal;
     color: #1c1815;
     line-height: 1;
     letter-spacing: -0.5px;
 }
 
-/* Posicionado à direita, logo abaixo da terminação da palavra "arts" */
+/* Subtítulo centralizado */
 .logo-subtitulo {
     font-family: 'Caveat', 'Dancing Script', cursive;
     font-size: 1.45rem;
-    color: #4e1923; /* Tom vinho/bordô */
+    color: #4e1923;
+    /* Tom vinho/bordô */
     font-weight: 700;
-    text-align: right;
-    margin-top: -2px;
-    padding-right: 8px;
+    text-align: center;
+    margin-top: 4px;
     line-height: 1;
 }
 
@@ -235,55 +243,96 @@ body {
 }
 
 /* --------------------------------------------------------
-   RESPONSIVIDADE (MOBILE)
+   RESPONSIVIDADE (MOBILE & TABLET)
 -------------------------------------------------------- */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     body {
-        padding: 20px 8px 30px 8px;
+        padding: 18px 6px 30px 6px;
+        background-attachment: scroll;
+        /* Melhor desempenho e nitidez em aparelhos móveis */
     }
 
     .folha-caderno {
-        padding: 30px 16px 26px 16px;
+        padding: 28px 14px 22px 14px;
+        border-radius: 18px;
     }
 
     .logo-titulo {
-        font-size: 3.4rem;
+        font-size: clamp(2.4rem, 11vw, 3.4rem);
     }
 
     .logo-subtitulo {
-        font-size: 1.25rem;
+        font-size: clamp(1.1rem, 4vw, 1.35rem);
+    }
+
+    .boas-vindas {
+        margin: 20px 0 24px 0;
+    }
+
+    .boas-vindas h2 {
+        font-size: clamp(1.5rem, 5.5vw, 1.95rem);
     }
 
     .vitrine-grid {
         max-width: 310px;
-        gap: 20px 24px;
-        margin-bottom: 28px;
+        gap: 18px 20px;
+        margin-bottom: 26px;
+    }
+
+    .card-foto {
+        border-radius: 16px;
     }
 
     .produto-nome {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
+        margin-top: 8px;
     }
 
     .card-sobre {
-        padding: 14px 14px;
+        padding: 12px 14px;
         gap: 12px;
+        border-radius: 12px;
     }
 
     .sobre-foto {
-        width: 80px;
-        height: 90px;
+        width: 75px;
+        height: 85px;
     }
 
     .sobre-texto h3 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .sobre-texto p {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
+        line-height: 1.3;
     }
 
-    .sticker-topo-esquerda { width: 110px; left: -25px; top: 10px; }
-    .sticker-topo-direita { width: 95px; right: -18px; top: -18px; }
-    .sticker-meio-direita { width: 85px; right: -22px; top: 380px; }
-    .sticker-baixo-esquerda { width: 75px; left: -22px; }
+    /* Ajuste proporcional dos adesivos para aparelhos móveis */
+    .sticker-topo-esquerda {
+        width: 155px;
+        left: -32px;
+        top: 6px;
+        transform: rotate(-10deg);
+    }
+
+    .sticker-topo-direita {
+        width: 125px;
+        right: -25px;
+        top: -25px;
+    }
+
+    .sticker-meio-direita {
+        width: 90px;
+        right: -20px;
+        top: 340px;
+        transform: scaleX(-1) rotate(-15deg);
+    }
+
+    .sticker-baixo-esquerda {
+        width: 80px;
+        left: -20px;
+        bottom: 100px;
+        transform: rotate(10deg);
+    }
 }
