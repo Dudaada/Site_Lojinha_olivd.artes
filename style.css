@@ -23,7 +23,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
+    
     min-height: 100vh;
     padding: 40px 15px 50px 15px;
     display: flex;
@@ -39,20 +39,20 @@ body {
     position: relative;
     width: 100%;
     max-width: 536px;
-
+    
     /* Papel quadriculado idêntico à referência (linhas a cada 14px) */
     background-color: #fcf8ec;
-    background-image:
+    background-image: 
         linear-gradient(#ded7c7 1.2px, transparent 1.2px),
         linear-gradient(90deg, #ded7c7 1.2px, transparent 1.2px);
     background-size: 14px 14px;
     background-position: center top;
-
+    
     border-radius: 24px;
-    box-shadow:
+    box-shadow: 
         0 20px 50px rgba(0, 0, 0, 0.7),
         0 4px 15px rgba(0, 0, 0, 0.35);
-
+    
     padding: 42px 28px 36px 28px;
 }
 
@@ -115,7 +115,7 @@ body {
 
 .logo-titulo {
     font-family: 'Kerithing', 'Playfair Display', Georgia, serif;
-    font-size: 3.4rem;
+    font-size: 4.3rem; /* Um pouco maior como solicitado */
     font-weight: normal;
     color: #1c1815;
     line-height: 1;
@@ -126,8 +126,7 @@ body {
 .logo-subtitulo {
     font-family: 'Caveat', 'Dancing Script', cursive;
     font-size: 1.45rem;
-    color: #4e1923;
-    /* Tom vinho/bordô */
+    color: #4e1923; /* Tom vinho/bordô */
     font-weight: 700;
     text-align: right;
     margin-top: -2px;
@@ -147,7 +146,7 @@ body {
 
 .boas-vindas h2 {
     font-family: 'Kerithing', 'Caveat', 'Dancing Script', cursive;
-    font-size: 2.1rem;
+    font-size: 2.3rem;
     font-weight: normal;
     color: #4e1923;
 }
@@ -192,7 +191,7 @@ body {
 }
 
 /* --------------------------------------------------------
-   4. CARD "OI, EU SOU A DUDA"
+   4. CARD "OI, EU SOU A DUDA :)"
 -------------------------------------------------------- */
 .card-sobre {
     background-color: #fcf9f1;
@@ -217,7 +216,7 @@ body {
 .sobre-texto h3 {
     font-family: 'Kerithing', 'Playfair Display', Georgia, serif;
     font-weight: normal;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     color: #1c1815;
     margin-bottom: 5px;
 }
@@ -248,7 +247,7 @@ body {
     }
 
     .logo-titulo {
-        font-size: 2.7rem;
+        font-size: 3.4rem;
     }
 
     .logo-subtitulo {
@@ -276,33 +275,15 @@ body {
     }
 
     .sobre-texto h3 {
-        font-size: 1.05rem;
+        font-size: 1.2rem;
     }
 
     .sobre-texto p {
         font-size: 0.7rem;
     }
 
-    .sticker-topo-esquerda {
-        width: 110px;
-        left: -25px;
-        top: 10px;
-    }
-
-    .sticker-topo-direita {
-        width: 95px;
-        right: -18px;
-        top: -18px;
-    }
-
-    .sticker-meio-direita {
-        width: 85px;
-        right: -22px;
-        top: 380px;
-    }
-
-    .sticker-baixo-esquerda {
-        width: 75px;
-        left: -22px;
-    }
+    .sticker-topo-esquerda { width: 110px; left: -25px; top: 10px; }
+    .sticker-topo-direita { width: 95px; right: -18px; top: -18px; }
+    .sticker-meio-direita { width: 85px; right: -22px; top: 380px; }
+    .sticker-baixo-esquerda { width: 75px; left: -22px; }
 }
